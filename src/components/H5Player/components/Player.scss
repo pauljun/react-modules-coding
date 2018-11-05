@@ -1,0 +1,719 @@
+@import 'src/assets/css/base';
+
+// 云台控制span的样式
+@mixin arrowSpan($rotate, $bg-color:$c-main) {
+  animation: fadeIn 0.5s;
+  transform: rotate($rotate);
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  margin: 10px 10px;
+  &:before,
+  &:after {
+    content: '';
+    border-color: transparent;
+    border-style: solid;
+    position: absolute;
+  }
+  &:before {
+    border: none;
+    background-color: $bg-color;
+    height: 50%;
+    width: 30%;
+    top: 50%;
+    left: 35%;
+  }
+  &:after {
+    left: 7px;
+    top: -50%;
+    border-width: 20px 13px;
+    border-bottom-color: $bg-color;
+  }
+}
+
+$playerDownloadFormItemHeight: 24px;
+// $playerBarBg: rgba(45, 51, 84, 0.80);
+$playerBarBg: rgba(29, 33, 53, 0.80);
+$playerBarHeight: 28px;
+
+// 播放器提示文字
+@mixin playerTip{
+  color: $c-fff;
+  font-size: $fs-14;
+  font-weight: normal;
+}
+
+// 单个视频组件样式
+.player-box{
+  height: 100%;
+  video{
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+  }
+  .html5-player-container{
+    // 播放错误窗口
+    .html5-player-error-message-container{
+      z-index: 999;
+      button{
+        .html5-player-reload{
+          background: url('../../../assets/img/player/Error.svg') no-repeat center;
+        }
+        use {
+          display: none;
+        }
+      }
+      &>div{
+        @include playerTip();
+      }
+    }
+    // 播放结束窗口 重播按钮
+    .html5-player-end-view{
+      button{
+        font-size: unset;
+        &:after{
+          display: block;
+          content: '重新播放';
+          @include playerTip();
+        }
+        .html5-player-replay-icon { 
+          @include setWH(64px, 64px);
+          background: url('../../../assets/img/player/RePlay.svg') no-repeat center;
+        }
+        use {
+          display: none;
+        }
+      }
+    }
+    // 标题样式
+    .html5-player-title {
+      z-index: 99;      
+      width: 100%;
+      padding: 0 15px;
+      height: $playerBarHeight;
+      line-height: $playerBarHeight;
+      cursor: default;
+      background: $playerBarBg;
+      .player-title-wrapper {
+        @include setWH();
+        .player-title-left{
+          width: 60%;
+          font-size: 14px;
+          @include setFlex(center, flex-start);
+          .camera-name{
+            @include ellip();
+            // padding:0 5px;
+          }
+        }
+        .player-title-right{
+          @include setWH(40%);
+          .anticon{
+            line-height: $playerBarHeight;
+            cursor: pointer;
+            margin-left:15px;
+          }
+        }
+      }
+    }
+    // 控制条样式
+    .html5-player-controlbar {
+      z-index: 99;
+      padding: 0;
+      background: $playerBarBg;
+      height: $playerBarHeight;
+      // 历史视频进度条样式
+      .html5-player-time-slider.html5-player-track-history-slider {
+        padding: 9px 16px !important;
+        width: calc(100% - 12px);
+        max-width: calc(100% - 12px);
+        position: absolute;
+        top: -30px;
+        margin: 4px 6px;
+        border-radius: 10px;
+        background: $playerBarBg;
+        //底部进度条
+        .html5-player-slider-rail{
+          height: 2px;
+          background: #3594FF;
+          border-radius: 2px;
+          // 时间截取样式
+          .html5-player-selection-container{
+            .html5-player-selection-left,.html5-player-selection-right{
+              @include setWH(7px,16px);
+              top: -7px;
+              span{
+                display: block;
+                @include setWH();
+                background: url('../../../assets/img/player/CutRuler_1.svg') no-repeat center/cover;
+                &:hover{
+                  background: url('../../../assets/img/player/CutRuler_2.svg') no-repeat center/cover;
+                }
+              }
+            }
+            .html5-player-selection-right{
+              span{
+                transform: rotate(180deg);
+              }
+            }
+          }
+          // 时间气泡
+          .html5-player-for-tooltip{
+            padding: 18px 0px 4px;
+            .html5-player-time-tooltip-content{
+              color: $c-fff;
+              border-radius: 4px;
+              background: $playerBarBg;
+            }
+          }
+          // 已播放的进度
+          .html5-player-slider-track{
+            background: #F22F66;
+            border-radius: 2px;
+            z-index: 99;                        
+          }
+          // 断片样式
+          .html5-player-broken{
+            background: rgba(29, 33, 53, 1);
+            z-index: 9;
+          }
+          // 有视频样式
+          .html5-player-hasvideo{
+            background: #3594FF;
+            z-index: 98;            
+          }
+          // 小圆点
+          .html5-player-slider-circle{
+            display: block;
+            @include setWH(10px,10px);
+            background-image: linear-gradient(-180deg, #FF6A6A 0%, #F22F66 100%);
+            border: 1px solid $c-fff;
+            top: -4px;
+            z-index: 100;
+          }
+        }
+      }
+      // 按钮样式
+      .html5-player-button-container {
+        padding: 0;
+        height: $playerBarHeight;
+        line-height: $playerBarHeight;
+        // 按钮公共样式
+        .html5-player-small-button {
+          color: #fff;
+          width: 30px;
+          height: $playerBarHeight;
+          line-height: 24px;
+          padding: 0 5px;
+        }
+        // live按钮
+        .html5-player-live-button {
+          display: none;
+        }
+        // 播放暂停按钮
+        .html5-player-play-pause-button {
+          .html5-player-pause-icon {
+            background: url('../../../assets/img/player/Pause.svg') no-repeat center;
+          }
+          .html5-player-play-icon {
+            background: url('../../../assets/img/player/Play.svg') no-repeat center;
+          }
+          use {
+            display: none;
+          }
+        }
+        // 音量按钮
+        .html5-player-volume-button {
+          top: 0px;
+          left: 4px;
+          vertical-align: top;
+          .html5-player-volume-icon{
+            color: #fff;
+            zoom: 0.9;
+          }
+          .html5-player-tooltip-content-container{
+            .html5-player-slider-rail{
+              width: 4px;
+              border-radius: 2px;
+              background: rgba(255, 255, 255, 0.4);
+            }
+            .html5-player-slider-track{
+              background: rgba(255, 255, 255, 1);
+              border-radius: 2px;
+            }
+            .html5-player-slider-vertical-circle{
+              background: #3594FF;
+              border: 2px solid #FFFFFF;
+              left: -5px;
+            }
+          }
+        }
+        // 云台控制按钮
+        .ptz-btn{
+          position: absolute;
+          @include setWH(40px, 39px);
+          top: -46px;
+          left: 4px;
+          background: url('../../../assets/img/player/LD_BG_Close.svg') no-repeat center/cover;
+          .ptz-status-icon {
+            @include setWH(16px,16px);
+            position: absolute;
+            top: 14px;
+            left: 10px;
+            z-index: 9;
+            background: url('../../../assets/img/player/Open_White.svg') no-repeat center;
+          }
+          &.open{
+            background: transparent;
+            .ptz-status-icon{
+              background-image: url('../../../assets/img/player/Hide_White.svg')
+            }
+          }
+        }
+        // 停止按钮
+        .stop-btn{
+          margin: 1px 0 0 4px;
+          .anticon{
+            font-size: $fs-18;
+          }
+        }
+        // 视频播放时间
+        .html5-player-time-container{
+          display: none;
+        }
+        // 分辨率按钮
+        .html5-player-quality-button{
+          display: none;
+        }
+        // 倍速按钮
+        .html5-player-rate-button{
+          background: transparent;
+          border-radius: 2px;
+          border: 1px solid $c-fff;
+          @include setFont($fs-12, $c-fff);
+          height: 18px;
+          line-height: 18px;
+          margin: 5px 8px;
+          padding: 0 8px;
+          .html5-player-rate-container{
+            li{
+              height: 24px;
+              line-height: 24px;
+            }
+          }
+        }
+        // 全屏按钮
+        .html5-player-screen-full-off-button{
+          .html5-player-fullscreen-icon{
+            background: url('../../../assets/img/player/Full.svg') no-repeat center;
+          }
+          .html5-player-fullscreen-off-icon{
+            background: url('../../../assets/img/player/Exit.svg') no-repeat center;   
+          }
+          use{
+            display: none;
+          }
+        }
+        // 历史实时切换按钮        
+        .method-btns {
+          float: left;   
+          padding: 0;   
+          width: 80px;   
+          .ant-btn{
+            @include setWH(50%);
+            @include setFont($fs-12, $c-fff);
+            border-radius: 0;
+            float: left;          
+            padding:0;
+            border: 0;
+            opacity: 0.6;
+            background-image: linear-gradient(-180deg, #476792 0%, #454790 98%);
+            &:hover{
+              opacity: 0.8;
+            }
+          }
+          .ant-btn.active{
+            opacity: 1;
+            background-image: linear-gradient(-180deg, #5B7EAC 0%, #5A5CA6 98%);
+            margin-right: -1px;
+          }
+        }
+        // 轮巡状态按钮
+        .video-turn-status {
+          cursor: default;
+          width: auto;
+          color: greenyellow;
+          vertical-align:top;
+          height: 100%;
+          line-height: $playerBarHeight;
+          font-size: 14px;
+          .anticon {
+            margin-left: 8px;
+          }
+        }
+        // 视频截取按钮
+        .html5-player-selection-btn{
+          background: url('../../../assets/img/player/Scissors_Blue.svg') no-repeat center;
+        }
+        // 画面拉伸按钮
+        // .stretching-btn {
+        //   position: absolute;
+        //   right: 80px;
+        // }
+        // // 下载按钮
+        // .video-download{
+        //   position: absolute;
+        //   right: 110px;
+        // }
+      }
+    }
+    // 视频截图的样式
+    .capture-list{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 100;
+      background-color: #fff;
+      padding: 0 35px 0 20px;
+      cursor: default;
+      .close-list{
+        display: block;
+        @include setWH(12px,32px);
+        @include setFont(14px, $c-dark);
+        font-weight: bold;
+        line-height: 32px;
+        background: #ddd;
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        display: block;
+        margin-top: -16px;
+        &:hover{
+          color: $c-main
+        }
+      }
+      .ant-carousel {
+        height: 100%;
+        .slick-list{
+          padding: 10px 0;
+        }
+        .slick-slider,
+        .slick-list,
+        .slick-track,
+        .slick-slide {
+          height: 100%;
+        }
+        .slick-track{
+          cursor: default;
+        }
+        .slick-slide.capture-item {
+          cursor: pointer;
+          width: 96px !important;
+          margin-right: 5px;
+          position: relative;
+          &:hover{
+            border: 1px solid red;
+            .delete-img{
+              display: block;
+            }
+          }
+          .delete-img{
+            display: none;
+            position: absolute;
+            z-index: 9;
+            top: -8px;
+            right: -8px;
+            color: #fff;
+            border-radius: 50%;
+            background: red;
+          }
+          .capture-img {
+            @include setWH();
+          }
+        }
+        .slick-arrow {
+          @include setWH(12px, 32px);
+          background-color: #ddd;
+          margin-top: -16px;
+          &:before {
+            display: block;
+            @include setWH();
+            @include setFont(14px, $c-main);
+            font-family: 'anticon';
+            font-weight: bold;
+            line-height: 32px;
+          }
+        }
+        .slick-prev {
+          left: -15px;
+          &:before{
+            content: '\E620';
+          }
+        }
+        .slick-next {
+          right: -15px;
+          &:before {
+            content: '\E61F';
+          }
+        }
+        .slick-disabled{
+          &:before{
+            opacity: .5;
+            color: $c-dark;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+    // 水印
+    .player-watermark {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+    }
+  }
+  .cursor-none.cursor-none{
+    cursor: default;
+  }
+  // 播放器内部云台控制的样式
+  .camera-control-container{
+    width: 100%;
+    height: calc(100% - 72px);
+    @include setFlex(stretch, stretch, column);
+    position: absolute;
+    top: 36px;
+    left: 0;
+    z-index: 999;
+    pointer-events: none;
+    &>div{
+      @include setFlex(stretch, stretch);
+      &>div{
+        pointer-events: all;
+        @include setFlex();
+      }    
+    }
+    .camera-control-top {
+      height: 20%;
+      .camera-control-top-left,
+      .camera-control-top-right {
+        width: 20%;
+      }
+      .camera-control-top-middle {    
+        @include flexNum();
+        &:hover span {
+          @include arrowSpan(0deg);
+        }
+      }
+      .camera-control-top-left:hover span {
+        @include arrowSpan(-45deg);
+      }
+      .camera-control-top-right:hover span {
+        @include arrowSpan(45deg);
+      }
+    }
+    .camera-control-middle {
+      @include flexNum();
+      .camera-control-middle-middle {
+        @include flexNum();
+        pointer-events: none;
+      }
+      .camera-control-middle-left,
+      .camera-control-middle-right {
+        width: 20%;
+      }
+      .camera-control-middle-left:hover span {
+        @include arrowSpan(-90deg);
+      }
+      .camera-control-middle-right:hover span {
+        @include arrowSpan(90deg);
+      }
+    }
+    .camera-control-bottom {
+      height:20%;
+      .camera-control-bottom-left,
+      .camera-control-bottom-right {
+        width: 20%;
+      }
+      .camera-control-bottom-middle {
+        @include flexNum();
+        &:hover span {
+          @include arrowSpan(-180deg);
+        }
+      }
+      .camera-control-bottom-left:hover span {
+        @include arrowSpan(-135deg);
+      }
+      .camera-control-bottom-right:hover span {
+        @include arrowSpan(135deg);
+      }
+    }
+  }
+  // 无播放源的样式
+  .empty-player-wrapper{
+    background-color: #333;
+    height: 100%;
+    @include playerTip();
+    @include setFlex();
+    .empty-player {
+      pointer-events: none;
+      @include setFlex(center, center,column);    
+      i{
+        display: block;
+        @include setWH(64px, 64px);
+        background: url('../../../assets/img/player/PlaySource.svg') no-repeat center/cover;
+      }
+    }
+  }
+  // 下载弹窗样式
+  // .html5-player-download-window{
+  //   position: absolute;
+  //   bottom: 40px;
+  //   right: 10px;
+  //   z-index: 99;
+  //   background: #fff;
+  //   overflow: hidden;
+  //   border-radius: 4px;
+  //   .html5-player-download-title{
+  //     font-size: $fs-14;
+  //     color: $c-dark;
+  //     font-weight: bold;
+  //     padding: 5px 14px;
+  //     margin-bottom: 4px;
+  //     background: $bg-f7;
+  //     border-bottom: 1px solid $c-ddd;
+  //     .html5-player-download-tip {
+  //       margin-left: 10px;
+  //       color: $c-normal;
+  //       font-weight: normal;
+  //       font-size: $fs-12;
+  //     }
+  //   }
+  //   .ant-form{
+  //     padding: 0px 10px;
+  //     .ant-form-item{
+  //       height: $playerDownloadFormItemHeight;
+  //       max-width: 210px;
+  //       .ant-form-item-label{
+  //         height: 100%;
+  //         line-height: $playerDownloadFormItemHeight;
+  //         label{
+  //           font-size: $fs-12;
+  //         }
+  //       }
+  //       .ant-form-item-control{
+  //         height: 100%;
+  //         line-height: $playerDownloadFormItemHeight;
+  //         @include setFlex();
+  //         .ant-form-item-children{
+  //           height: $playerDownloadFormItemHeight;
+  //           @include flexNum;
+  //           .ant-input{
+  //             height: $playerDownloadFormItemHeight;
+  //           }
+  //           input[type="number"],
+  //           input::-webkit-outer-spin-button,
+  //           input::-webkit-inner-spin-button {
+  //             appearance: none;
+  //             -webkit-appearance: none!important;
+  //             -moz-appearance: textfield;
+  //           }
+  //           .ant-input-group-addon{
+  //             font-size: $fs-12;
+  //           }
+  //         }
+  //         .ant-form-explain{
+  //           font-size: $fs-12;            
+  //           margin-left: 4px;
+  //           width: 64px;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .html5-player-download-btns{
+  //     text-align: center;
+  //     .ant-btn{
+  //       margin: 5px;
+  //       font-size: 12px;
+  //     }
+  //   }
+  // }
+  // 下载弹窗样式新
+  .html5-player-download-window{
+    @include setWH(270px, 210px);
+    @include absCenter();
+    background: $playerBarBg;
+    z-index: 99;
+    overflow: hidden;
+    border-radius: 4px;
+    .html5-player-download-title{
+      height: 36px;
+      line-height: 36px;
+      font-size: $fs-14;
+      color: $c-fff;
+      font-weight: bold;
+      padding: 0 15px;
+      border-bottom: 1px solid $c-ddd;
+      margin-bottom: 0;
+      .anticon{
+        line-height: 36px;
+        float: right;
+      }
+    }
+    .html5-player-download-range-picker{
+      height: auto;
+      padding: 10px 15px;
+      width: 100%;
+      color: $c-fff;
+      .date-picker-wrapper{
+        margin: 8px 0;
+        font-size: $fs-12;
+        height: 32px;
+        .date-picker-label{
+          padding-right: 6px;
+        }
+        .date-picker-content{
+          input{
+            color: $c-fff;  
+            font-size: $fs-12;          
+            background: transparent;
+            border: 1px solid #777;
+          }
+          .ant-calendar-picker-icon::after{
+            color: $c-fff;
+          }
+        }
+      }
+    }
+    .html5-player-download-btns{
+      text-align: center;
+      .ant-btn{
+        @include setWH(80px,32px);
+        margin: 5px;
+        font-size: 12px;
+        color: $c-fff;
+        opacity: 0.8;        
+        &:hover{
+          opacity: 1;
+        }
+      }
+      .cancel{
+        border: 1px solid #777;        
+        background: transparent;
+      }
+    }
+  }
+  // 播放器全屏样式
+  .html5-player-container {
+    &:-webkit-full-screen,
+    &:-moz-full-screen,
+    &:-ms-fullscreen,
+    &:fullscreen{
+      background: red;
+    }
+  }
+}

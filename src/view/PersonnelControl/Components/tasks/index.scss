@@ -1,0 +1,32 @@
+@import '../../../../assets/css/base.scss';
+.tasks-all-container{
+  height: 100%;
+  .ant-form-explain{
+    margin-top: 2px;
+  }
+  .container{
+    height: 100%;
+     @include setFlex('center','left','column');
+    .task-content-box{
+      flex: 1;
+      overflow: auto;
+      position: relative;
+      .ant-spin-nested-loading{
+        // height: 100%;
+        //position: static;
+        > div > .ant-spin{
+          max-height: 400px;
+        }
+        .ant-spin-container{
+          // height: 100%;
+          // position: relative;
+          //position: static;
+        }
+      }
+    }
+    .tasks-add-auto{
+      overflow: auto;
+      width: 100%;
+    }
+  }
+}

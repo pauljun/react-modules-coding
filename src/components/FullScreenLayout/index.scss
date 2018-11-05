@@ -1,0 +1,11 @@
+.tools-screen-layer {
+  flex: 1;
+  align-self: center;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+  .anticon {
+    padding-right: 5px;
+  }
+}

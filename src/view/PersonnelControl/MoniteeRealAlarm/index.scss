@@ -1,0 +1,398 @@
+@import '../../../assets/css/base.scss';
+.current_alarm_box{
+	@include setFlex();
+	height: 100%;
+  .alarm_left_total{
+		height: 100%;
+		width: 300px;
+		transition: all .5s;
+		background: #EAEDF1;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		.alarm-real-just{
+			height: calc(100% - 48px);
+			width: 100%;
+			overflow-y: auto;
+			overflow-x: hidden;
+		.alarm_all_total_num{
+			margin-top: 11px;
+			.title{
+				height: 45px;
+				width: 262px;
+				margin: 0 auto;
+			}
+			.content{
+				height: 247px;
+				margin-top: -16px;
+				.chart{
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+		.alarm_type_total_num{
+			position: relative;
+			margin-top: -46px;
+			.title{
+				height: 45px;
+				width: 262px;
+				margin: 0 auto;
+			}
+			.content{
+				height: 236px;
+				margin-top: -9px;
+				.chart{
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+		.alarm_change_total_num{
+			margin-top: 22px;
+			.title{
+				height: 45px;
+				width: 262px;
+				margin: 0 auto;
+			}
+			.content{
+				height: 266px;
+				margin-top: -6px;
+				.chart{
+					height: 100%;
+					width: 100%;
+				}
+			}
+    }}
+    .alarm-title-real{
+      font-family: PingFang-SC-Bold;
+      height:48px;
+      font-size: 18px;
+      color: #333333;
+      background: #D8DCE3;
+      line-height: 48px;
+			padding-left: 16px;
+			border-bottom: 1px solid #c9c5c5;
+    } 
+		.alarm_all_total_num{
+			position: relative;
+			.title{
+				background: url('../../../assets/img/monitees/realalarm/DataName_1.svg') no-repeat 50% ;
+			}
+			.circle-word{
+				height: 70%;
+				width: 100%;
+				position: absolute;
+				display: flex;
+				align-items:center;
+				justify-content: center;
+				flex-direction: column;
+				font-size: 12px;
+			/* 	@media screen and (max-width:1366px) {
+					.circle-word-count{
+						div:nth-child(2){
+							font-size: 16px !important;
+						}
+					}
+					.circle-nohandle-count{
+						div:nth-child(2){
+							font-size: 16px !important;
+						}
+					}
+				} */
+				.circle-word-count{
+					div{
+						text-align: center;
+					}
+					div:nth-child(2){
+						font-size: 24px;
+						font-weight: 'bold';
+						color: #151515;
+						margin-top: 0px;
+					}
+				}
+				.circle-nohandle-count{
+					margin-top: 8px;
+					div{
+						text-align: center;
+					}
+					div:nth-child(2){
+						font-size: 24px;
+						font-weight: 'bold';
+						color: #FFAA00;
+					}
+				}
+				
+			}
+		}
+		.alarm_type_total_num{
+			.title{
+				background: url('../../../assets/img/monitees/realalarm/DataName_2.svg') no-repeat 50%;
+			}
+		}
+		.alarm_change_total_num{
+			.title{
+				background: url('../../../assets/img/monitees/realalarm/DataName_3.svg') no-repeat 50%;
+			}
+		}
+		&.collapse{
+			margin-left: -300px;
+			>div{
+				.title{
+					width: 0;
+				}
+			}
+			.collapse-btn {
+				.anticon{
+					color: $c-fff;
+					transform: rotate(90deg);					
+				}
+			}
+		}
+		.collapse-btn {
+			position: absolute;
+			height: 45px;
+			line-height: 28px;
+			width: 0;
+			background: transparent; 
+			right: -14px;
+      top: 50%;
+      z-index: 10;
+			cursor: pointer;
+			border-top: 10px solid transparent;
+			border-right: none;
+			border-bottom: 10px solid transparent;
+			border-left: 14px solid #1C253F;
+			.anticon{
+				color: $c-fff;
+				transition: all 0.5s;
+				transform: rotate(-90deg);
+				position: absolute;
+				left: -15px;
+				top: 4.5px;
+			}
+		}
+	}
+	.alarm_right_container{
+		flex: 1;
+		height: 100%;
+		position: relative;
+		.ant-popover-get{
+			.ant-popover-inner-content{
+        padding: 2px 9px;
+      }
+		}
+		.alarm-scroll-height{
+			position: absolute;
+			bottom:15px;
+			right: 35px;
+			width:40px;
+			height:40px;
+			z-index: 10;
+			cursor: pointer;
+			border-radius: 50%;
+			background: url('../../../assets/img/monitees/realalarm/toTop_Main.svg') $all-active-orange  no-repeat center center;
+			&:hover{
+				background: url('../../../assets/img/monitees/realalarm/toTop_Main.svg') $c-main-orange  no-repeat center center;
+			}
+		}
+		.alarm-just-button{
+        position: absolute;
+				right: 24px;
+				z-index: 10;
+				top: 8px;
+		
+			.ant-btn{
+				color: #FFAA00;
+				border-color:#FFAA00; 
+				&:hover{
+					color: #fff;
+					border-color:#FFAA00;
+					background:#FFAA00;  
+				}
+				&:focus{
+					color: #fff;
+					border-color:#FFAA00 !important;
+					background:#FFAA00; 
+				}
+			}
+		}
+    .ant-tabs{
+			height:100%;
+			.ant-tabs-content{
+				height:calc(100% - 48px);
+				.ant-tabs-tabpane{
+					height: 100%;
+					.alarm-tabs-tabscreate{
+						height: 100%;
+						padding: 24px 20px 20px 10px;
+						display: flex;
+						flex-wrap: wrap;
+						overflow-y: auto;
+						justify-content: center;
+						align-content: space-between;
+					}
+				}
+			}
+      .ant-tabs-bar{
+				height: 48px;
+				background: #F3F6F9;
+				margin: 0;
+				.ant-tabs-tab-active{
+					color:#FFAA00;
+				}
+        .ant-tabs-nav-container{
+					height: 48px;
+					border-bottom:1px solid #e8e8e8;
+          .ant-tabs-nav-wrap{
+           .ant-tabs-nav-scroll{
+             background:#F3F6F9;
+             .ant-tabs-nav{
+							 margin-left: 15px;
+							 .ant-tabs-ink-bar{
+								background-color:#FFAA00;
+								height: 3px;
+							}
+							 .ant-tabs-tab{
+								background: #f3f6f9;
+							 }
+                 div{
+									 /* height: 48px; */
+                   .ant-tabs-tab{
+										 border:0;
+										 text-align: center;
+										 padding:5px 16px;
+									   margin-right: 15px;
+										 &:hover{
+											color:#FFAA00;
+											//color:transparent;
+											//background: url('../../../assets/img/monitees/realalarm/New_1_Main.svg') no-repeat left;
+										}
+									 }
+									  
+								 }
+								 
+             }
+           } 
+          }
+        }
+      }
+		}
+		.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-ink-bar{
+			visibility: inherit;
+		}
+		.alram_right_header{
+			height: 50px;
+			line-height: 50px;
+      margin-bottom: 16px;
+      background: #F3F6F9;
+			position: relative;
+			.refresh_btn{
+        position: absolute;
+        top:8px;
+        right: 24px;
+				color: #FFAA00;
+				font-size: 14px;
+				border-color: #FFAA00;
+				float: right; 
+				width: 90px;
+        height: 32px;
+        
+				>span{
+					margin-left: 2px;
+				}
+			}
+		}
+		.alart_list_item{
+			height: calc(100% - 50px);
+			//background: skyblue;
+			padding: 0 108px;
+		}
+	}
+}
+.alarm-tabs-tabscreate{
+/*   display: flex;
+  flex-wrap: wrap;
+  height: 837px;
+    overflow-y: auto;
+		padding:20px 0 0 30px; */
+		.real-alarm-height{
+			height:70px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor:pointer;
+			.ant-btn{
+				&:hover{
+					color:#ff8800;
+					border-color:#ff8800;
+				}
+			}
+			div{
+				color: #FFAA00;
+				border:1px solid 
+			}
+		}
+		.housefile-demo-infinite-content {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			.ant-row {
+				width: 100%;
+			}
+		}
+	}
+	@media screen and (max-width: 1366px) {
+		/* .alarm-tabs-tabscreate{
+			height:680px;
+		} */
+	}
+	/* .alarm-item-layer{
+		display: flex;
+	} */
+.icon-tab-sp{
+	background: url('../../../assets/img/monitees/realalarm/New_1_Dark.svg') no-repeat left;
+	&:hover{
+		background: url('../../../assets/img/monitees/realalarm/New_1_Main.svg') no-repeat left;
+	}
+img{
+//	display: block;
+	position: absolute;
+	margin-left:-8px;
+	margin-top: 11px;
+}
+span{
+	padding-left: 24px;
+}
+}
+.light{
+	background: url('../../../assets/img/monitees/realalarm/New_1_Main.svg') no-repeat left;
+}
+.name-real-alarm-none{
+	width: 360px;
+	height: 0px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+@media screen and (max-width: 1366px) {
+	.name-real-alarm-none{
+		width: 320px !important;
+		height: 0px;
+	}
+}
+.name-real-alarm-none-il{
+	width: 240px;
+	height: 0px;
+	margin: 0px 25px;
+
+}
+.real-alarm-spin-bufferPosition{
+	position: absolute;
+		z-index: 10;
+		top: 45%;
+		left:50%;
+
+}

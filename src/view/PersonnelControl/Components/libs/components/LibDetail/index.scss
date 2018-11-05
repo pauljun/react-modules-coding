@@ -1,0 +1,56 @@
+@import 'src/assets/css/base.scss';
+.monitee-lib-info-wrapper{
+  width: 100%;
+}
+.lib-info-container{
+  height: calc(100% - 42px);
+  padding: 8px 30px 16px;
+  @include setFlex(stretch,flex-start);
+  flex-wrap: wrap;
+  .lib-info{
+    width: 50%;
+    font-size: $fs-12;
+    max-height: 120px;
+    margin-top: 8px;
+    .info-label {
+      color: #666;
+    }
+    .info-value {
+      color: $c-333;  
+      line-height:  24px;  
+      display: block;
+      width: 100%;
+      word-wrap: break-word;  
+    }
+  }
+  .info-desc{
+    max-height: 100px;
+    display: block;
+    overflow: auto;
+  }
+  .lib-manager{
+    width: 100%;
+    max-height: 150px;
+    @include setFlex(stretch,flex-start,column);
+    .lib-manager-list{
+      @include flexNum();
+      overflow-y: auto;
+      margin-top: 5px;
+      .list-item {
+        cursor: default;
+        margin-right: 20px;
+        color: $c-333;
+        padding: 4px 0;
+      }
+    }
+  }
+  // 一体机描述
+  .machine-desc {
+    width: 100%;
+    textarea{
+      margin-top: 8px;
+      resize: none;
+      overflow-y: auto;
+    }
+  }
+}

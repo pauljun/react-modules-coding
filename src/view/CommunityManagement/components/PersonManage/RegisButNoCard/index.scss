@@ -1,0 +1,114 @@
+.card-design-community-another {
+  width: 348px;
+  height: 226px;
+  border: 1px solid #d8dce3;
+  margin-left: 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+  &:hover{
+    border: 1px solid #FF8800;
+  }
+  .card-design-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    .card-design-top-left {
+      font-size: 12px;
+      p{
+        margin-bottom: 4px;
+      color:#333333;
+      width:150px;
+      span{
+        color:#666666;
+      }
+      }
+      p:nth-child(1){
+        font-size: 14px;
+color: #FF8800;
+      }
+    }
+    .card-design-top-right {
+      position: relative;
+      width: 138px;
+      height: 168px;
+     // border: 1px solid red;
+      //background: url('../../../../../../../../assets/img/community/Face_White_BG.svg');
+      background: url('../../../../../assets/img/community/Face_White_BG.svg');
+      padding: 4px;
+      .watermask{
+        position: absolute;
+        top: 61px;
+        left: 25px;
+        display: block;
+        color: rgba(255,255,255,0.2);
+        text-shadow: 1px 1px rgba(0,0,0,0.3);
+        font-size: 8px;
+        transform: rotate(45deg);
+        z-index: 1;
+      }
+      img{
+        height:100%;
+        width:100%;
+        border-radius: 3px;
+      }
+    }
+  }
+  .card-design-line{
+    height: 1px;
+    background: #D8DCE3;
+  }
+  .circle-half{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    .circle-half-community{
+      height:24px;
+      width: auto;
+      border-radius: 12px;
+      border: 1px solid #FFBB22;
+      padding: 0 10px  0 10px;
+      margin: 5px;
+      color: #FF8800;
+      font-size: 12px;
+      //text-align: center;
+      line-height: 22px;
+    }
+    .circle-half-community-more {
+      height:24px;
+      width: auto;
+      border-radius: 12px;
+      //border: 1px solid #FFBB22;
+      padding: 0 10px  0 10px;
+      margin: 5px;
+      color: #333333;
+      font-size: 12px;
+      //text-align: center;
+      line-height: 24px;
+    }
+  }
+  .card-design-line-anoter{
+    height: 1px;
+    background: #D8DCE3;
+    margin-top: -8px;
+  }
+  .card-design-bottom{
+    font-size: 12px;
+    padding:10px;
+    margin-top: -4px;
+    p{
+      margin-bottom: 4px;
+      color:#333333;
+      span{
+      color:#666666;
+      }
+    }
+  }
+}
+/* @media screen and (max-width: 1366px) {
+  .card-design-community{
+    margin-left: 80px !important;
+    margin-top: 20px !important;
+  }
+} */

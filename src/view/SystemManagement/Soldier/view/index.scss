@@ -1,0 +1,12 @@
+.soldier-container {
+  height:100%;
+  width: 100%;
+  .soldier-content-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    height: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+  }
+}
+

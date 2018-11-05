@@ -1,0 +1,302 @@
+@import '../../../../../assets/css/base';
+.monitee_tasks_add{
+	.task_top{
+		border: 1px solid  #D8DCE3;
+		height: 49px;
+		.tasks_add_title{
+			font-size: 18px;
+			line-height: 48px;
+			width: 1000px;
+			margin: 0 auto;
+			color: $c-main-orange;
+		}
+	}
+	.ant-form{
+		width: 100px;width: 1000px;
+		margin: 25px auto 0;
+		padding-bottom: 50px;
+	}
+	.header_step_title{
+		height: 28px;
+		font-size: 14px;
+		color: $c-333;
+		border-bottom: 1px solid #B5BBC7;
+		margin: 0;
+		font-weight: 800;
+		padding-left: 14px;
+	}
+	.monitee_tasks_box{
+		margin-bottom: 20px;
+	}
+	.form-submit-btn{
+		margin: -10px auto 0;
+		text-align: center;
+		button:nth-child(2){
+			margin-left: 8px;
+		}
+	}
+	// antd自带样式修改
+	.ant-form-item{
+		margin: 0px;
+		.ant-form-item-label{
+			font-size: 12px;
+			color: $c-666;
+			height: 17px;
+			line-height: 17px;
+			margin-bottom: 4px;
+			label{
+				color: $c-666;
+				font-size: 12px;
+			}
+		}
+		.ant-form-item-required{
+			font-size: 12px;
+			color: $c-666;
+			padding-bottom: 8px;
+		}
+		.form-group-item-label-required{
+			font-size: 12px;
+			color: $c-666;
+			padding-bottom: 8px;
+		}
+		.ant-form-item-control-wrapper{
+			padding-left: 11px;
+		}
+	}
+}
+// 添加-基本信息样式
+.task_basic_info{
+	padding: 16px 0px;
+	overflow: hidden;
+	.col-item{
+		padding: 0px 16px;
+		margin-bottom: 16px;
+		.ant-form-explain{
+			font-size: 12px;
+		}
+	}
+	.ant-calendar-picker{
+		width: 214px !important;
+	}
+	.ant-calendar-picker-input{
+		&:hover{
+			border-color: $c-main-orange !important;
+		}
+	}
+	textarea{
+		width: 100% !important;
+		height: 80px !important;
+	}
+	.ant-form-item{
+		// width: 50%;
+		// float: left;
+	}
+	.task_data_time{
+		.ant-form-item-label{
+			label{
+				padding-left: 11px;
+			}
+		}
+	}
+	// .taks-name{
+	// 	height: 28px;
+	// }
+	// .date-range{
+	// 	input{
+	// 		height: 28px;
+	// 	}
+	// }
+	// .form-group-item{
+	// 	// width: 50%;
+	// 	.form-group-item-label-required{
+	// 		padding-bottom: 8px;
+	// 		&::before{
+	// 			display: inline-block;
+	// 			margin-right: 4px;
+	// 			content: "*";
+	// 			font-family: SimSun;
+	// 			line-height: 1;
+	// 			font-size: 14px;
+	// 			color: #f5222d;
+	// 		}
+	// 	}
+	// }
+}
+
+.monitees-error{
+	color: red;
+	font-size: 12px;
+}
+
+// 模拟表单样式修改
+.form-group-item{
+		// width: 50%;
+		.form-group-item-label-required{
+			font-size: 12px;
+			color: $c-666;
+			padding-bottom: 8px;
+			&::before{
+				display: inline-block;
+				margin-right: 4px;
+				content: "*";
+				font-family: SimSun;
+				line-height: 1;
+				font-size: 14px;
+				color: #f5222d;
+			}
+		}
+	}
+	.tasks_receive,.libs_list, .tasks_receive{
+		padding: 16px 16px;
+		.ant-form-item{
+			margin-bottom: 16px;
+		}
+	}
+	// 布控库样式
+	.libs_list{
+		.form-item-content{
+			padding-left: 8px;
+		}
+		.form-group-item-content{
+			padding-left: 8px;
+		}
+		.monitee-libs{
+			width: 970px;
+			>div{
+				height: 450px;
+			}
+			.list-left-libs{
+				width: 484px;
+			}
+			.selected-libs-right-container{
+				width: 484px;
+			}
+		}
+	}
+	.tasks_scope{
+		.monitees-error{
+			padding-left: 24px !important;
+		}
+		.scope-type{
+			text-align: center;
+			margin: 16px 0;
+			.btn{
+				width: 104px;
+				height: 28px;
+				border-radius: 3px;
+				span{
+					font-size: 14px;
+					margin-left: 4px;
+				}
+				i{
+					color: #8899bb;
+					transition: all .3s;
+				}
+				&:not(.active):hover{
+					border-color: $all-active-orange;
+					i{
+						color: $all-active-orange;
+					}
+				}
+				&.active{
+					background: $all-active-orange;
+					border: 1px solid $c-main-orange;
+					color: #fff;
+					i{
+						color: #fff;
+					}
+				}
+			}
+			button:nth-child(2){
+				margin-left: 8px;
+			}
+		}
+		.libs-select-map{
+			overflow: hidden;
+			padding-left: 24px;
+			>div{
+				float: left;
+			}
+			// 地图样式
+			.libs-select-left{
+				width: 628px;
+				height: 540px;
+				border: 1px solid #D8DCE3;
+				border-radius: 3px;
+				width: 952px;
+				// .ibs-amap-wrapper.map-select-layout.amap-container{
+				// 	overflow: visible;
+				// }
+				// .device-list-check-wrapper {
+				// 	width: 321px;
+				// 	height: 539px;
+				// 	top: 0px;
+    		// 	right: -335px;
+				// }
+			}
+		}
+		.libs-select-list{
+			padding-left: 12px;
+			height: 540px;
+			.org-select-device-wrapper {
+				padding-bottom: 0px;
+				height: 540px;
+				max-height: auto;
+			}
+		}
+	}
+	.tasks_receive{
+		.monitees-error{
+			padding-bottom: 8px;
+			padding-left: 5px;
+		}
+		.form-group-item{
+			padding-bottom: 16px;
+			.ant-tree-checkbox-inner{
+				&:hover{
+					border-color: $c-main-orange;
+				}
+			}
+			.form-group-item-content{
+				font-size: 12px;
+				color: $c-333;
+				padding-left: 10px;
+				.ant-checkbox-wrapper{
+					span:nth-child(2){
+						font-size: 12px;
+						color: $c-333;
+					}
+				}
+			}
+			.repeat-mode{
+				.ant-radio-wrapper{
+					>span:nth-child(2){
+						font-size: 12px;
+						color: $c-333;
+					}
+				}
+				button{
+					width: 40px;
+					height: 25px;
+					padding: 0px;
+					margin-right: 8px;
+					color: $c-333;
+					&:focus{
+						border: 1px solid #d9d9d9;
+						color: $c-333;
+					}
+					span{
+						font-size: 12px;
+					}
+					&.active{
+						border-color: $c-main-orange;
+						color: $c-main-orange;
+					}
+				}
+			}
+		}
+		.promission_management {
+			width: 945px;
+			margin: 0 auto;
+		}
+	}

@@ -1,0 +1,213 @@
+@import 'src/assets/css/base';
+// 多屏播放器样式
+.multiplayer-wrapper {
+  @include setFlex(flex-start, flex-start, column);
+  @include setWH();
+  	background-color: #fff;
+  	border-radius: 4px;
+    // 多屏控制台样式
+    .multiplayer-header {
+      background-color: #f7f7f7;
+      text-align: right;
+    @include setWH(100%,40px);
+    line-height: 40px;
+    // background: $c-warning;
+    &>span{
+      display: inline-block;
+      a{
+        color: inherit;
+      }
+      .anticon{
+        color:#1e9efd;
+        margin-right: 5px;
+      }
+      font-size: 12px;
+      font-family: SimSun;
+      margin-right: 19px;
+      &:hover{
+        border-left-color: $c-eee;
+        border-right-color: $c-eee;
+        // background: $bg-f7;
+        color:$c-main;
+      }
+    }
+    .multiplayer-control-btn{
+      cursor: pointer;
+    }
+  }
+  // 多屏容器样式
+  .multiplayer-body {
+    @include flexNum();
+    width: 100%;
+    user-select: none;
+    border: 1px solid $c-fff;
+    background: $c-fff;
+    position: relative;
+    .player-container {
+      width: 100%;
+      border: 1px solid $c-fff;
+      background: $c-fff;
+      position: absolute;
+      &:fullscreen {
+        width: 100%!important;
+        height: 100%!important;
+        position: static!important;
+      }
+      &:-webkit-full-screen {
+        width: 100% !important;
+        height: 100% !important;
+        position: static !important;
+      }
+      &:-moz-full-screen {
+        width: 100% !important;
+        height: 100% !important;
+        position: static !important;
+      }
+      &:-ms-full-screen {
+        width: 100% !important;
+        height: 100% !important;
+        position: static !important;
+      }
+      .player-box {
+        @include setWH();
+      }
+    }
+    .player-container.active-player {
+      .player-box {
+        @include setWH(calc(100% + 4px), calc(100% + 4px));
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        border: 2px solid red;
+        z-index: 9;
+      }
+    }
+  }
+  // 不同分屏下的多屏容器样式
+  .multiplayer-body.cols-1 {
+    border: 0 none;
+    .player-container {
+      @include setWH();
+      border: 0 none;
+    }
+    .player-container.active-player {
+      .player-box {
+        @include setWH();
+        position: static;
+        border: 0 none;
+      }
+    }
+  }
+  .multiplayer-body.cols-2 {
+    .player-container {
+      @include setWH(50%, 50%)
+    }
+  }
+  .multiplayer-body.cols-3 {
+    .player-container {
+      @include setWH(33.33333333333333333333%, 33.33333333333333333333%);
+    }
+  }
+  .multiplayer-body.cols-4 {
+    .player-container {
+      @include setWH(25%, 25%);
+    }
+  }
+}
+// 视频弹窗样式（挂载在body下）
+.video-turn-modal{
+  .ant-modal-content{
+    border-radius: 2px;
+    .ant-modal-body{
+      .video-turn-body{
+        .dialog-body-thead{
+          margin-bottom: 20px;
+        }
+        .dialog-body-tcontent{
+          height: 405px;
+          width: calc(100% + 48px);
+          border: 1px solid $c-ddd;
+          background: $c-ddd;
+          position: relative;
+          margin-left: -24px;
+          .video-turn-checkbox{
+            margin: 0;
+            background: #292929;
+            border: 1px solid $c-ddd;
+            position: absolute;
+            .anticon{
+              font-size: 86px;
+              color:rgba(255, 255, 255, 0.4);
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              margin-left: -43px;
+              margin-top: -43px;
+            }
+            &:hover{
+              border-color: $c-main;
+            }
+            .ant-checkbox{
+              position: absolute;
+              top: 5%;
+              right: 5%;
+              border-radius: 50%;
+              .ant-checkbox-inner{
+                border-radius: 50%;
+              }
+            }
+            .ant-checkbox-checked:after{
+              border-radius: 50%;
+            }
+          }
+          .video-turn-checkbox.disabled{
+            background: rgba(41,41,41,0.5);
+            cursor: not-allowed;
+            .tip {
+              position: absolute;
+              text-align: center;
+              width: 100%;
+              color: #fff;
+              top: 50%;
+              margin-top: 45px;
+              font-family: SimSun;
+            }
+            .ant-checkbox{
+              display: none;
+            }
+          }
+        }
+        .dialog-body-tcontent.cols-1 {
+          .video-turn-checkbox {
+            @include setWH();
+          }
+        }
+        .dialog-body-tcontent.cols-2 {
+          .video-turn-checkbox {
+            @include setWH(50%, 50%)
+          }
+        }
+        .dialog-body-tcontent.cols-3 {
+          .video-turn-checkbox {
+            @include setWH(33.33333333333333333333%, 33.33333333333333333333%);
+          }
+        }
+        .dialog-body-tcontent.cols-4 {
+          .video-turn-checkbox {
+            @include setWH(25%, 25%);
+          }
+        }
+      }
+    }
+    .video-turn-footer .modal-btns{
+      margin-top: 20px;
+      text-align: center;
+      button{
+        margin: 0 20px;
+        width: 118px;
+        height: 36px;
+        border-radius: 2px;
+      }
+    }
+  }
+}

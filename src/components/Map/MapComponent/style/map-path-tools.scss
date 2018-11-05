@@ -1,0 +1,51 @@
+.map-path-tools {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -150px;
+  z-index: 1;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  height: 40px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.tool-item {
+      // width: 40px;
+      height: 100%;
+      padding: 4px 4px;
+      cursor: pointer;
+      user-select: none;
+      &.next-btn {
+        margin-left: 12px;
+      }
+      i {
+        color: #8899bb;
+        font-size: 16px;
+      }
+      &:hover {
+        i {
+          color: #ffaa00;
+        }
+      }
+      .ant-switch {
+        height: 16px;
+        width: 28px;
+        margin-top: -3px;
+        min-width: auto;
+        // background-color: #ccc;
+        &::after {
+          width: 14px;
+          height: 14px;
+          top: 0px;
+        }
+      }
+    }
+  }
+}

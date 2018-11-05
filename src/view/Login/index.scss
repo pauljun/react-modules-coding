@@ -1,0 +1,316 @@
+@media screen and (max-width: 1280px) {
+  body {
+    background: #ccc;
+  }
+  .user-login-view {
+    height: 100%;
+    width: 1260px;
+    margin: auto;
+  }
+}
+
+.user-login-view {
+  height: 100%;
+  background: #efefef;
+  text-align: center;
+  background: url('../../assets/login/Login_BG.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.user-login-view {
+  .anticon{
+    line-height:1;
+  }
+  .copyright {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+  }
+  .login-item-label {
+    text-align: left;
+    color: #FFFFFF;
+    line-height: 28px;
+  }
+  .login-bg {
+    height: 50%; // background: #2c2e2f url('../img/login-bg.jpg') no-repeat 0 0;
+    background-size: cover;
+  }
+  .login-title {
+    opacity: 0.03;
+    color: #fff;
+    font-size: 60px;
+    line-height: 1;
+    position: absolute;
+    left: 5px;
+    top: 0;
+    font-weight: bold;
+  }
+  .footer-logo {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    z-index: 3;
+    text-align: center;
+    margin-bottom: 10px;
+    .footer-logo-text {
+      // white-space:pre;
+      font-size: 12px;
+      color: #7792B0;
+      text-align: center;
+      height:26px;
+      line-height: 26px;
+      margin-top:10px;
+      .footer-logo-text-download {
+        position:absolute;
+        margin-left:10px;
+        display: inline-block;
+        &:hover {
+          .footer-logo-google-link {
+            display: inline-block;
+          }
+        }
+        .footer-logo-google-icon{
+          cursor: pointer;
+          position:absolute;
+          top:2px;
+          width:24px;
+          height:24px;
+        }
+        .footer-logo-google-link{
+          display: none;
+          // width:300px;
+          height:24px;
+          margin-left:74px;
+        }
+      }
+    }
+  }
+  .system-name {
+    font-size: 32px;
+    color: #fff;
+    margin-left: 20px;
+  }
+  .login-content {
+    position: absolute;
+    top: 50%;
+    margin-top: -190px;
+    width: 540px;
+    height: 380px;
+    left: 50%;
+    margin-left: -270px;
+    z-index: 11;
+    background-image: linear-gradient(-180deg, #10557B 0%, #0D3366 100%);
+    box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.30);
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    transition: 1s;
+  }
+  .login-book {
+    width: 45px;
+    height: 45px;
+    border-radius: 0 8px 0 0;
+    overflow: hidden;
+    cursor: pointer;
+    background: url('../../assets/login/Login_Corner.png') no-repeat;
+    .anticon:before{
+      display:block;
+    }
+    .anticon {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      font-size: 24px;
+      color: #2E5E9C;
+    }
+  }
+  .login-form {
+    padding: 70px 0 0 0;
+    height: 100%;
+    h2 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+    .ant-form-item-control-wrapper {
+      width: 100%;
+      padding: 0 90px;
+      text-align: center;
+    }
+    input {
+      font-size: 14px;
+      color: #7792B0;
+      height: 48px;
+      width: 100%;
+      padding-left: 50px;
+      background-color: rgba(0, 0, 0, 0);
+      border: 0 none;
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.15) 100%);
+      border-radius: 5px;
+    }
+    ::-webkit-input-placeholder {
+      color: #7792B0;
+    }
+    .ant-btn {
+      border:none;
+      width: 240px;
+      font-size: 14px;
+      height: 48px;
+      margin-top: 30px;
+      background-image: linear-gradient(0deg, #2288EE 0%, #3399FF 100%);
+      box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.20);
+      border-radius: 3px;
+    }
+    .ant-form-item-children:after {
+      display: none;
+    }
+    .ant-form-item-children-icon{
+      display:none;
+    }
+    .ant-form-item{
+      margin-bottom: 5px;
+    }
+    .anticon:before{
+      display:block;
+    }
+    .anticon {
+      color: #4174AA;
+      margin-right: 10px;
+      position: absolute;
+      z-index: 1;
+      left: 15px;
+      font-size: 24px;
+      top: 13px;
+    }
+    .login-send-code {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      color: #fff;
+      z-index: 1;
+      font-size: 12px;
+      span {
+        cursor: pointer;
+      }
+    }
+    .ant-form-explain {
+      position: absolute;
+      left: 51px;
+      top: 82px;
+      font-size: 12px;
+      color: #FF5580;
+    }
+    #loginName,
+    #userPwd,
+    #phoneNum,
+    #identifyCode {
+      position: relative;
+    }
+  }
+  .login-title-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    &:hover {
+      .login-title-nav {
+        display: block;
+      }
+    }
+  }
+  .login-title-nav {
+    width: 76px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    background-image: linear-gradient(-180deg, #247BAB 0%, #1A6892 100%);
+    box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    right: 60px;
+    display: none;
+    top: 10px;
+    &:after {
+      width: 10px;
+      height: 10px;
+      background: #247BAB;
+      content: ' ';
+      display: block;
+      right: -4px;
+      top: 9px;
+      position: absolute;
+      transform: rotate(45deg);
+      z-index: 0;
+    }
+  }
+  .login-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    font-size: 20px;
+    line-height: 40px;
+    color: #fff;
+    img {
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  }
+}
+
+
+
+.login-cg-bg {
+  position: absolute;
+  z-index: 5;
+  background-image: linear-gradient(-180deg, #10557B 0%, #0D3366 100%);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: left;
+  animation: logincg 2s linear;
+}
+
+@-webkit-keyframes logincg {
+  0% {
+    transform: rotateY(0);
+    left: 0;
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes logincg {
+  0% {
+    transform: rotateY(0);
+    left: 0;
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}

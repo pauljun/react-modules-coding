@@ -1,0 +1,20 @@
+.ant-form.monitee-form-lib-info{
+  width: 100%;
+  padding: 18px 30px 0;
+  .promission-container{
+    .promission_management{
+      width: 100%;
+      margin-bottom: 3px;
+      &.has-error{
+        border: 1px solid #f5222d;
+      }
+      .orgTree{
+        // max-height: 200px;
+        overflow-y: auto;
+      }
+    }
+    .ant-form-explain{
+      color: #f5222d;
+    }
+  }
+}

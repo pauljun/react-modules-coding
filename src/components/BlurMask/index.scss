@@ -1,0 +1,21 @@
+
+.layout-DetailView {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: calc(100%);
+  height: calc(100%);
+  margin: 0 auto;
+  z-index: 9;
+  transition: all 0.3s linear;
+  &.layout-DetailView-hide{
+    transform: scale(0);
+    opacity: 0
+  }
+  .details-view{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+  }
+}

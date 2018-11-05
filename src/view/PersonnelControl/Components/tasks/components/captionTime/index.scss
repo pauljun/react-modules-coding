@@ -1,0 +1,16 @@
+@import '../../../../../../assets/css/base.scss';
+.capture_time{
+  .ant-radio-group{
+    .ant-radio-wrapper{
+      margin-right: 0px;
+    }
+  }
+  .time_picker{
+    width: 150px;
+    &:hover{
+      .ant-time-picker-input{
+        border-color: $c-main-orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../../../assets/css/base.scss';
+
+.access_card{
+  width: 172px;
+  height: 378px;
+  padding: 8px;
+  .card_img{
+    display: block;
+    width: 156px!important;
+    height: 192px!important;
+    border-radius: 3px;
+  }
+  .card_content{
+    padding-top: 8px;
+    width: 100%;
+    .content_name{
+      font-family: PingFang-SC-Bold;
+      font-size: 14px;
+      color: $all-active-orange;
+      margin-bottom: 2px;
+    }
+    .content_info{
+      width: 100%;
+      line-height: 18px;
+      .info_label{
+        font-family: PingFang-SC-Regular;
+        font-size: 12px;
+        color: #ccc;
+        margin-bottom: 0;
+      }
+      .info_value{
+        display: block;
+        height: 20px;
+        line-height: 20px;
+        font-family: PingFang-SC-Regular;
+        font-size: 12px;
+        color: #666666;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+
+.org-select-device-wrapper{
+  margin: 0 auto;
+  width: 100%;
+  min-width: 860px;
+  min-height: 300px;
+  max-height: 500px;
+  padding-bottom: 80px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  font-size: 12px;
+  .title-part{
+    height: 40px;
+    line-height: 40px;
+    background: #F3F6F9;
+    border-bottom: 1px solid #D8DCE3;
+    border-radius: 3px 0 0 0;
+    padding: 0 16px;
+    font-size: 12px;
+    color: #333333;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+  .list-layout{
+    padding: 16px;
+    height: calc(100% - 40px);
+  }
+  // 搜索框 
+  .device-search-wrapper{
+    width: 20%;
+    height: 28px;
+    position: absolute;
+    top: 6px;
+    left: 104px;
+    input{
+      height: 100%;
+    }
+  }
+  // 组织树
+  .org-select-wrapper{
+    width: 33.33%;
+    border: 1px solid #D8DCE3;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    .ant-tree{
+      @extend .list-layout;
+      &>li{
+        position: relative;
+        height: 100%;
+        overflow: auto;
+        .device-count{
+          i{
+            font-style: normal;
+          }
+          position: absolute;
+          right: 10px;
+          .online-count{
+            color: green;
+          }
+        }
+      }
+      li span.ant-tree-node-content-wrapper {
+        width: calc(100% - 30px);
+        padding-right: 30px;
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &:hover {
+          background: rgba(55, 65, 95, 0.4);
+          color: #fff;
+        }
+        &.ant-tree-node-selected{
+          background: rgba(55, 65, 95, 0.4);
+          color:#fff;
+        }
+      }
+    }
+  }
+  // 设备列表
+  .org-device-wrapper{
+    width: 31.34%;
+    height: auto;
+    border-left: 0;
+    border-radius: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    .title-part .ant-checkbox{
+      vertical-align: text-bottom;
+    }
+  }
+  // 选中列表
+  .select-device-wrapper{
+    width: 33.33%;
+    height: auto;
+    margin-left: 2%;
+  }
+  .operate-wrapper{
+    width: 100%;
+    margin: 16px auto;
+    border-top: 0;
+    position: absolute;
+    bottom: 0;
+    .ant-btn{
+      width: 80px;
+    }
+  }
+}

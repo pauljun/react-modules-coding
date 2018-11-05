@@ -1,0 +1,14 @@
+.no-padding-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: calc(100% - 50px);
+  .alarm_nullbox{
+    width: 365px;
+    height: 0;
+  }
+  .all_alarm_nullbox{
+    width: 290px;
+    height: 0;
+  }
+}

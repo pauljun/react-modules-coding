@@ -1,0 +1,88 @@
+.container-header {
+  position: absolute;
+  width: 100vw;
+  height: 50px;
+  line-height: 50px;
+  left: 0;
+  top: 0;
+  .logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    display: flex;
+    width: 296px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fff;
+    align-items: center;
+    padding-left: 10px;
+    .logo-img {
+      height: 100%;
+      padding: 8px 4px;
+      display: flex;
+      align-items: center;
+      img {
+        height: 100%;
+      }
+    }
+    .logo-name {
+      padding-left:6px;
+      width: calc(100% - 48px);
+      font-size: 18px;
+    }
+  }
+  .user-Action {
+    z-index: 9;
+    width: 400px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    .user-item {
+      height: 100%;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 12px;
+      .anticon{
+        font-size: 16px;
+        padding-right:5px;
+      }
+    }
+    .user-info {
+      border-right: 1px solid #565679;
+      border-left: 1px solid #565679;
+      width: 132px;
+      padding: 0 8px;
+      .user-name{
+        padding-left:5px;
+        width: 56px;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    .system-alarm {
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      background: #ff544f;
+      line-height: 20px;
+      border-right: none;
+      .about-text {
+        font-size: 12px;
+      }
+      .anticon{
+        padding-right:0;
+      }
+    }
+  }
+}

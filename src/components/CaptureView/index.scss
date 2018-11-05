@@ -1,0 +1,58 @@
+@import 'src/assets/css/base';
+
+
+.base-image-view{
+  background: #bbaacc;
+  position: relative;
+  button{
+    margin-right: 10px;
+  }
+  .image-view{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    img{
+      transition: all 0.01s;
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.capture-view{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position:relative ;
+    img{
+      transition: all 0.01s;
+      position: absolute;
+    }
+  .img-box{
+    z-index: 3;
+    position:absolute;
+    box-sizing:content-box;
+    background:rgba(255,255,0,0.2);
+    transition: all 0.01s;
+    overflow:hidden;
+    cursor: move;
+    .cropper-view-box{
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      outline: 1px solid #39f;
+      outline-color: rgba(51, 153, 255, 0.75);
+    }
+  }
+  .capture-mask{
+    cursor: crosshair;
+    width: 100%;
+    height: 100%;
+    position:relative;
+    background: rgba(0,0,0,0.5)
+  }
+}

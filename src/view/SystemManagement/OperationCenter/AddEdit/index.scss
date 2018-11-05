@@ -1,0 +1,32 @@
+.setting-operation-center-eidt{
+  .ant-form-item{
+    margin-bottom: 10px;
+    .ant-form-item-label,.ant-form-item-control-wrapper{
+      min-height:40px;
+      line-height: 40px;
+    }
+  }
+  .setting-map-center{
+    width: 220px;
+    margin-right: 22px;
+  }
+  .opt-action-btn{
+    padding:0 30px;
+    margin-right: 20px;
+  }
+  .formUpload{
+    margin-bottom: 10px;
+  }
+  .opt-map{
+    width: 1000px;
+    padding: 0 30px;
+    .ibs-amap-wrapper{
+      height: 540px;
+      margin-top: 10px;
+    }
+  }
+}
+.optCenter-add-contianer{
+  height: calc(100% - 120px);
+  overflow-y: auto;
+}

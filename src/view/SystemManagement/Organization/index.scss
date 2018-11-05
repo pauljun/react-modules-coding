@@ -1,0 +1,182 @@
+@import 'src/assets/css/base.scss';
+.orgInfo {
+  padding: 0 20px;
+  .ant-row {
+    padding-bottom: 20px;
+  }
+  h2 {
+    @include setFlex;
+    font-size: 16px;
+    .editOrg {
+      flex: 1;
+      text-align: right;
+    }
+  }
+  span {
+    padding-right: 20px;
+    word-break: break-all;
+    display: -webkit-flex;
+    display: flex;
+    i {
+      font-style: normal;
+      color: #999;
+    }
+    b {
+      font-weight: normal;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+  }
+}
+.org-Search-Btns{
+  display: flex;
+  .addOrgBtn {
+    float: right;
+    width: 146px;
+    height: 32px;
+    padding: 0px 20px;
+    border: 0 none;
+    margin-right: 0px;
+    border-radius: 4px;
+    margin: 0 10px ;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: left;
+    line-height: 14px;
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(#ffaa00),
+      to(#ff8800)
+    );
+  }
+}
+.add-edit-modal-org{
+  .ant-modal-content{
+    .ant-modal-body{
+      padding: 8px 40px;
+    }
+  }
+}
+.org-table {
+  height: calc(100% - 70px);
+  .setting-table {
+    height: calc(100% - 80px);
+  }
+  .ant-pagination{
+    height: 80px;
+    padding-top:20px;
+  }
+}
+.org-breadCrumb {
+  .ant-breadcrumb {
+    width: 100%;
+    .search-group {
+      width: 290px;
+      height: 42px;
+      .ant-input-suffix {
+        width: 40px;
+        height: 32px;
+        .ant-btn-primary {
+          border: 1px;
+          background-image: linear-gradient(
+            -180deg,
+            #ffaa00 0%,
+            #ff8800 100%
+          ) !important;
+          .anticon {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+.org-table-content {
+  height: calc(100% - 48px);
+  width: 1000px;
+  margin: 0 auto;
+  .org-baseInfo {
+    padding: 20px 0;
+    height: 182px;
+  }
+  .org-title{
+    font-size: 14px;
+    color: #333333;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    margin-bottom: 0;
+  } 
+  .org-table-container{
+    height: calc(100% - 182px);
+    .ant-table-tbody tr {
+      .action-td, .create-time-td {
+        width: 20%!important;
+      }
+      .desc-td {
+        width: 25%!important;
+      }
+    }
+  }
+  .ant-row-flex {
+    .ant-col-6 {
+      .Title {
+        text-align: left;
+        font-size: 14px;
+        font-weight: 700;
+        color: #333333;
+        padding-left: 5px;
+        position: relative;
+        margin-left: 10px;
+        height: 14px;
+        line-height: 14px;
+      }
+    }
+  }
+  .ant-divider-horizontal {
+    background: #b5bbc7;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    width: 1000px;
+  }
+}
+
+.add-edit-modal-org {
+  .ant-modal-body{
+    padding:24px 36px;
+  }
+  .ant-modal-footer div{
+    text-align: center;
+  }
+  .ant-form-item {
+    width: 100%;
+    margin-bottom: 8px;
+    .ant-form-item-label {
+      text-align: left;
+      font-size: 12px;
+      margin-left:-12px;
+      label{
+        color: #666;
+        font-size: 12px;
+        
+      }
+    }
+    .ant-form-item-control-wrapper {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+    }
+   &.org-desc-item{
+    .ant-form-item-label{
+      margin-left:0;
+    }
+   }
+  }
+}
+.hindModalBtn{
+  .ant-modal-footer{
+    display:none
+  }
+}
